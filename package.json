@@ -1,0 +1,22 @@
+{
+  "name": "glomora",
+  "version": "1.0.0",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "y"
+  },
+  "license": "ISC",
+  "author": "Diganta",
+  "type": "commonjs",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "ejs": "^6.0.1",
+    "ejs-mate": "^4.0.0",
+    "express": "^5.2.1",
+    "mongoose": "^9.7.3"
+  }
+}
