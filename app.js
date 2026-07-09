@@ -37,6 +37,11 @@ app.get("/home",async (req,res)=>{
     
 })
 
+app.get("/services", async (req,res)=>{
+    let services = await Service.find({})
+    res.render("services/index",{services})
+})
+
 app.listen(port,()=>{
     console.log(`listining to the port ${port}` )
 })
