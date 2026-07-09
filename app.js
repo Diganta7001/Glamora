@@ -42,12 +42,23 @@ app.get("/services", async (req,res)=>{
     res.render("services/index",{services})
 })
 
+app.get("/services/new",(req,res)=>{
+    res.render("services/new.ejs")
+})
+
 app.get("/services/:id",async(req,res)=>{
     const {id} = req.params
     const service = await Service.findById(id)
     res.render("services/show.ejs",{service})
 
 })
+
+app.get("/services/:id/edit",async (req,res)=>{
+    const {id} = req.params
+    const service = await Service.findById(id)
+    res.render("services/edit.ejs",{service})
+})
+
 
 app.listen(port,()=>{
     console.log(`listining to the port ${port}` )

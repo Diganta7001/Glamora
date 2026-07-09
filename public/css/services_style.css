@@ -186,3 +186,38 @@
     color:#222;
 
 }
+.top-bar{
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    margin-bottom:35px;
+
+}
+
+.add-service-btn{
+
+    text-decoration:none;
+
+    background:#d4af37;
+
+    color:#222;
+
+    padding:14px 28px;
+
+    border-radius:8px;
+
+    font-weight:bold;
+
+    transition:.3s;
+
+}
+
+.add-service-btn:hover{
+
+    background:#222;
+
+    color:white;
+
+}

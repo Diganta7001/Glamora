@@ -1,0 +1,131 @@
+<% layout("layouts/boilerplate") %>
+
+<section class="form-section">
+
+    <div class="form-container">
+
+        <h1>Edit Service</h1>
+
+        <form
+            action="/services/<%= service._id %>?_method=PUT"
+            method="POST"
+        >
+
+            <label>Service Name</label>
+
+            <input
+                type="text"
+                name="serviceName"
+                value="<%= service.serviceName %>"
+                required
+            >
+
+            <label>Description</label>
+
+            <textarea
+                name="description"
+                rows="5"
+                required
+            ><%= service.description %></textarea>
+
+            <label>Category</label>
+
+            <select name="category">
+
+                <option
+                    value="Hair"
+                    <%= service.category==="Hair"?"selected":"" %>>
+                    Hair
+                </option>
+
+                <option
+                    value="Face"
+                    <%= service.category==="Face"?"selected":"" %>>
+                    Face
+                </option>
+
+                <option
+                    value="Nails"
+                    <%= service.category==="Nails"?"selected":"" %>>
+                    Nails
+                </option>
+
+                <option
+                    value="Massage"
+                    <%= service.category==="Massage"?"selected":"" %>>
+                    Massage
+                </option>
+
+                <option
+                    value="Beard"
+                    <%= service.category==="Beard"?"selected":"" %>>
+                    Beard
+                </option>
+
+                <option
+                    value="Other"
+                    <%= service.category==="Other"?"selected":"" %>>
+                    Other
+                </option>
+
+            </select>
+
+            <div class="row">
+
+                <div>
+
+                    <label>Price</label>
+
+                    <input
+                        type="number"
+                        name="price"
+                        value="<%= service.price %>"
+                        required
+                    >
+
+                </div>
+
+                <div>
+
+                    <label>Duration</label>
+
+                    <input
+                        type="number"
+                        name="duration"
+                        value="<%= service.duration %>"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+            <label>Image URL</label>
+
+            <input
+                type="text"
+                name="image[url]"
+                value="<%= service.image.url %>"
+                required
+            >
+
+            <label>Image Filename</label>
+
+            <input
+                type="text"
+                name="image[filename]"
+                value="<%= service.image.filename %>"
+                required
+            >
+
+            <button>
+
+                Update Service
+
+            </button>
+
+        </form>
+
+    </div>
+
+</section>

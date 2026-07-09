@@ -91,17 +91,35 @@
 
             <div class="buttons">
 
-                <a href="#" class="book-btn">
+                <a
+                    href="/appointments/new/<%= service._id %>"
+                    class="book-btn"
+                >
 
                     Book Appointment
 
                 </a>
 
-                <a href="/services" class="back-btn">
+                <a
+                    href="/services/<%= service._id %>/edit"
+                    class="edit-btn"
+                >
 
-                    Back to Services
+                    Edit Service
 
                 </a>
+                <form
+                    action="/services/<%= service._id %>?_method=DELETE"
+                    method="POST"
+                >
+
+                    <button class="delete-btn">
+
+                        Delete Service
+
+                    </button>
+
+                </form>
 
             </div>
 

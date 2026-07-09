@@ -1,0 +1,100 @@
+<% layout("layouts/boilerplate") %>
+
+<section class="form-section">
+
+    <div class="form-container">
+
+        <h1>Add New Service</h1>
+
+        <form action="/services" method="POST">
+
+            <label>Service Name</label>
+
+            <input
+                type="text"
+                name="serviceName"
+                required
+            >
+
+            <label>Description</label>
+
+            <textarea
+                name="description"
+                rows="5"
+                required
+            ></textarea>
+
+            <label>Category</label>
+
+            <select name="category">
+
+                <option>Hair</option>
+
+                <option>Face</option>
+
+                <option>Nails</option>
+
+                <option>Massage</option>
+
+                <option>Beard</option>
+
+                <option>Other</option>
+
+            </select>
+
+            <div class="row">
+
+                <div>
+
+                    <label>Price</label>
+
+                    <input
+                        type="number"
+                        name="price"
+                        min="0"
+                        required
+                    >
+
+                </div>
+
+                <div>
+
+                    <label>Duration (mins)</label>
+
+                    <input
+                        type="number"
+                        name="duration"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+            <label>Image URL</label>
+
+            <input
+                type="text"
+                name="image[url]"
+                required
+            >
+
+            <label>Image Filename</label>
+
+            <input
+                type="text"
+                name="image[filename]"
+                required
+            >
+
+            <button>
+
+                Add Service
+
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
