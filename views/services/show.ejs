@@ -1,0 +1,112 @@
+<% layout("layouts/boilerplate") %>
+
+<section class="service-show">
+
+    <div class="service-container">
+
+        <!-- Left Side -->
+
+        <div class="service-image">
+
+            <img
+                src="<%= service.image.url %>"
+                alt="<%= service.serviceName %>"
+            >
+
+        </div>
+
+        <!-- Right Side -->
+
+        <div class="service-content">
+
+            <span class="service-category">
+                <%= service.category %>
+            </span>
+
+            <h1>
+                <%= service.serviceName %>
+            </h1>
+
+            <div class="rating">
+
+                ⭐⭐⭐⭐⭐
+
+                <span>4.9 (124 Reviews)</span>
+
+            </div>
+
+            <div class="price-duration">
+
+                <div>
+
+                    <h4>Price</h4>
+
+                    <p class="price">
+                        ₹ <%= service.price %>
+                    </p>
+
+                </div>
+
+                <div>
+
+                    <h4>Duration</h4>
+
+                    <p>
+                        <%= service.duration %> Minutes
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="description">
+
+                <h3>About this Service</h3>
+
+                <p>
+
+                    <%= service.description %>
+
+                </p>
+
+            </div>
+
+            <div class="features">
+
+                <h3>What's Included</h3>
+
+                <ul>
+
+                    <li>✔ Premium Products</li>
+
+                    <li>✔ Certified Professional Stylist</li>
+
+                    <li>✔ Sanitized Equipment</li>
+
+                    <li>✔ Relaxing Salon Experience</li>
+
+                </ul>
+
+            </div>
+
+            <div class="buttons">
+
+                <a href="#" class="book-btn">
+
+                    Book Appointment
+
+                </a>
+
+                <a href="/services" class="back-btn">
+
+                    Back to Services
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>

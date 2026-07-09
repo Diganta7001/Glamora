@@ -32,14 +32,21 @@ app.get("/",(req,res)=>{
 })
 
 app.get("/home",async (req,res)=>{
-    let allServices = await Service.find({})
+    const allServices = await Service.find({})
     res.render("home.ejs",{allServices})
     
 })
 
 app.get("/services", async (req,res)=>{
-    let services = await Service.find({})
+    const services = await Service.find({})
     res.render("services/index",{services})
+})
+
+app.get("/services/:id",async(req,res)=>{
+    const {id} = req.params
+    const service = await Service.findById(id)
+    res.render("services/show.ejs",{service})
+
 })
 
 app.listen(port,()=>{

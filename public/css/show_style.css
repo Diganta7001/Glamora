@@ -1,0 +1,275 @@
+*{
+    box-sizing:border-box;
+}
+
+.service-show{
+
+    width:90%;
+    margin:60px auto;
+
+}
+
+.service-container{
+
+    display:flex;
+
+    gap:60px;
+
+    align-items:flex-start;
+
+}
+
+/* Left */
+
+.service-image{
+
+    flex:1;
+
+}
+
+.service-image img{
+
+    width:100%;
+
+    height:600px;
+
+    object-fit:cover;
+
+    border-radius:20px;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.15);
+
+}
+
+/* Right */
+
+.service-content{
+
+    flex:1;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:22px;
+
+}
+
+.service-category{
+
+    width:max-content;
+
+    background:#d4af37;
+
+    color:#222;
+
+    padding:8px 20px;
+
+    border-radius:50px;
+
+    font-weight:600;
+
+    letter-spacing:.5px;
+
+}
+
+.service-content h1{
+
+    font-size:4rem;
+
+    color:#222;
+
+    line-height:1.1;
+
+}
+
+.rating{
+
+    color:#f4b400;
+
+    font-size:1.1rem;
+
+}
+
+.rating span{
+
+    color:#666;
+
+    margin-left:10px;
+
+}
+
+.price-duration{
+
+    display:flex;
+
+    gap:80px;
+
+    padding:25px 0;
+
+    border-top:1px solid #ddd;
+
+    border-bottom:1px solid #ddd;
+
+}
+
+.price-duration h4{
+
+    color:#777;
+
+    margin-bottom:8px;
+
+}
+
+.price{
+
+    font-size:2.5rem;
+
+    color:#d4af37;
+
+    font-weight:bold;
+
+}
+
+.description h3{
+
+    margin-bottom:15px;
+
+    color:#222;
+
+}
+
+.description p{
+
+    color:#666;
+
+    line-height:1.9;
+
+    font-size:1.05rem;
+
+}
+
+.features h3{
+
+    margin-bottom:15px;
+
+}
+
+.features ul{
+
+    list-style:none;
+
+}
+
+.features li{
+
+    margin-bottom:15px;
+
+    color:#555;
+
+    font-size:1rem;
+
+}
+
+.buttons{
+
+    display:flex;
+
+    gap:20px;
+
+    margin-top:20px;
+
+}
+
+.book-btn{
+
+    text-decoration:none;
+
+    background:#222;
+
+    color:white;
+
+    padding:16px 35px;
+
+    border-radius:10px;
+
+    font-weight:bold;
+
+    transition:.3s;
+
+}
+
+.book-btn:hover{
+
+    background:#d4af37;
+
+    color:#222;
+
+}
+
+.back-btn{
+
+    text-decoration:none;
+
+    border:2px solid #222;
+
+    color:#222;
+
+    padding:16px 35px;
+
+    border-radius:10px;
+
+    transition:.3s;
+
+}
+
+.back-btn:hover{
+
+    background:#222;
+
+    color:white;
+
+}
+
+/* Responsive */
+
+@media(max-width:1000px){
+
+.service-container{
+
+    flex-direction:column;
+
+}
+
+.service-image img{
+
+    height:420px;
+
+}
+
+.service-content h1{
+
+    font-size:3rem;
+
+}
+
+.price-duration{
+
+    gap:40px;
+
+}
+
+.buttons{
+
+    flex-direction:column;
+
+}
+
+.book-btn,
+.back-btn{
+
+    text-align:center;
+
+}
+
+}
