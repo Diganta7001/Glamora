@@ -69,11 +69,13 @@ nav a{
 .right-nav a:last-child{
     background: #f4b183;
     color: #222;
-    font-weight: 600;
+    font-weight: 500;
 }
 
 .right-nav a:last-child:hover{
-    background: #ffc89d;
+    border: 2px solid #f4b183;
+    background: #222;
+    color: #ffc89d;
 }
 
 /* Click Effect */
