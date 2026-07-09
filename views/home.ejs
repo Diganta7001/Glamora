@@ -1,50 +1,163 @@
 <% layout("layouts/boilerplate") %>
 
-<section class="services-section">
+<!-- HERO SECTION -->
 
-    <h1 class="section-title">Our Premium Services</h1>
+<section class="hero">
 
-    <div class="services-container">
+    <div class="hero-overlay">
 
-        <% for(let service of allServices){ %>
+        <h1>Look Your Best Every Day</h1>
+
+        <p>
+            Premium Hair • Skin • Spa • Grooming
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="/appointments/new" class="btn btn-primary">
+                Book Appointment
+            </a>
+
+            <a href="/services" class="btn btn-secondary">
+                Explore Services
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- WHY US -->
+
+<section class="why-us">
+
+    <h2>Why Choose Glamora?</h2>
+
+    <div class="features">
+
+        <div class="feature-card">
+
+            <div class="icon">💇</div>
+
+            <h3>Expert Stylists</h3>
+
+            <p>Experienced professionals dedicated to your perfect look.</p>
+
+        </div>
+
+        <div class="feature-card">
+
+            <div class="icon">🌿</div>
+
+            <h3>Premium Products</h3>
+
+            <p>Only trusted salon brands for healthy hair and skin.</p>
+
+        </div>
+
+        <div class="feature-card">
+
+            <div class="icon">😊</div>
+
+            <h3>Happy Clients</h3>
+
+            <p>Thousands of satisfied customers every year.</p>
+
+        </div>
+
+        <div class="feature-card">
+
+            <div class="icon">⭐</div>
+
+            <h3>Luxury Experience</h3>
+
+            <p>Relax, refresh and leave feeling confident.</p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FEATURED SERVICES -->
+
+<section class="featured-services">
+
+    <div class="heading">
+
+        <h2>Featured Services</h2>
+
+        <a href="/services">View All →</a>
+
+    </div>
+
+    <div class="service-grid">
+
+        <% allServices.slice(0,4).forEach(service => { %>
 
             <div class="service-card">
 
                 <img
                     src="<%= service.image.url %>"
                     alt="<%= service.serviceName %>"
-                    class="service-image"
                 >
 
-                <div class="service-content">
+                <div class="card-body">
 
-                    <h2><%= service.serviceName %></h2>
+                    <h3><%= service.serviceName %></h3>
 
-                    <p class="description">
-                        <%= service.description %>
-                    </p>
+                    <p><%= service.description %></p>
 
-                    <div class="service-details">
+                    <div class="card-footer">
 
-                        <span class="price">
-                            ₹ <%= service.price %>
-                        </span>
+                        <span>₹ <%= service.price %></span>
 
-                        <span class="duration">
-                            <%= service.duration %> mins
-                        </span>
+                        <span><%= service.duration %> mins</span>
 
                     </div>
-
-                    <a href="/services/<%= service._id %>" class="btn">
-                        View Details
-                    </a>
 
                 </div>
 
             </div>
 
-        <% } %>
+        <% }) %>
+
+    </div>
+
+</section>
+
+<!-- TESTIMONIALS -->
+
+<section class="testimonials">
+
+    <h2>What Our Clients Say</h2>
+
+    <div class="testimonial-container">
+
+        <div class="testimonial">
+
+            <h3>★★★★★</h3>
+
+            <p>
+                "Amazing atmosphere and excellent haircut!"
+            </p>
+
+            <strong>- Rahul</strong>
+
+        </div>
+
+        <div class="testimonial">
+
+            <h3>★★★★★</h3>
+
+            <p>
+                "Professional staff and beautiful ambience."
+            </p>
+
+            <strong>- Priya</strong>
+
+        </div>
 
     </div>
 
