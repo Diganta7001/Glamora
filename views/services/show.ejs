@@ -99,7 +99,7 @@
                     Book Appointment
 
                 </a>
-
+                <% if(currUser){ %>
                 <a
                     href="/services/<%= service._id %>/edit"
                     class="edit-btn"
@@ -120,6 +120,7 @@
                     </button>
 
                 </form>
+                <% } %>
 
             </div>
 

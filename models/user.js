@@ -39,8 +39,8 @@ const userSchema = new Schema({
     profileImage: {
         url: {
             type : String,
-            default : "https://unsplash.com/photos/a-person-standing-in-front-of-a-atm-machine-mwlXsvNTA0U",
-            set : (url)=> url==""?"https://unsplash.com/photos/a-person-standing-in-front-of-a-atm-machine-mwlXsvNTA0U":url
+            default : "https://plus.unsplash.com/premium_photo-1755882951379-6b8c26fb0fd5?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw2fHx8ZW58MHx8fHx8",
+            set : (url)=> url==""?"https://plus.unsplash.com/premium_photo-1755882951379-6b8c26fb0fd5?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw2fHx8ZW58MHx8fHx8":url
         },
         filename: String
     },
