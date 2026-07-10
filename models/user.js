@@ -1,8 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 const passportLocalMongoose = require("passport-local-mongoose").default;
-console.log(passportLocalMongoose);
-console.log(typeof passportLocalMongoose);
+
 
 const userSchema = new Schema({
 
@@ -38,7 +37,11 @@ const userSchema = new Schema({
     dateOfBirth: Date,
 
     profileImage: {
-        url: String,
+        url: {
+            type : String,
+            default : "https://unsplash.com/photos/a-person-standing-in-front-of-a-atm-machine-mwlXsvNTA0U",
+            set : (url)=> url==""?"https://unsplash.com/photos/a-person-standing-in-front-of-a-atm-machine-mwlXsvNTA0U":url
+        },
         filename: String
     },
 

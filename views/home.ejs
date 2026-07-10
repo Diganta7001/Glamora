@@ -1,5 +1,23 @@
 <% layout("layouts/boilerplate") %>
 
+<% if(currUser){ %>
+
+<section class="welcome-section">
+
+    <h2>
+
+        Welcome,
+
+        <span><%= currUser.name %></span>
+
+        👋
+
+    </h2>
+
+</section>
+
+<% } %>
+
 <!-- HERO SECTION -->
 
 <section class="hero">

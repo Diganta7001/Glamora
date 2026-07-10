@@ -10,6 +10,29 @@ body{
     color:#222;
 }
 
+/* Welcome */
+.welcome-section{
+
+    width:90%;
+
+    margin:40px auto;
+
+    text-align:center;
+
+}
+
+.welcome-section h2{
+
+    font-size:2rem;
+
+}
+
+.welcome-section span{
+
+    color:#d4af37;
+
+}
+
 /* HERO */
 
 .hero{

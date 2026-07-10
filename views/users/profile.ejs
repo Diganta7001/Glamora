@@ -1,0 +1,108 @@
+<% layout("layouts/boilerplate") %>
+
+<section class="profile-section">
+
+    <h1 class="profile-title">
+
+        My Profile
+
+    </h1>
+
+    <div class="profile-card">
+
+        <div class="profile-header">
+
+            <img
+                src="<%= currUser.profileImage.url %>"
+                class="profile-avatar"
+            >
+
+            <div>
+
+                <h2>
+
+                    <%= currUser.name %>
+
+                </h2>
+
+                <p>
+
+                    @<%= currUser.username %>
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="profile-details">
+
+            <div class="detail-box">
+
+                <h4>Email</h4>
+
+                <p><%= currUser.email %></p>
+
+            </div>
+
+            <div class="detail-box">
+
+                <h4>Phone</h4>
+
+                <p><%= currUser.phone %></p>
+
+            </div>
+
+            <div class="detail-box">
+
+                <h4>Gender</h4>
+
+                <p><%= currUser.gender %></p>
+
+            </div>
+
+            <div class="detail-box">
+
+                <h4>Role</h4>
+
+                <p><%= currUser.role %></p>
+
+            </div>
+
+            <div class="detail-box">
+
+                <h4>Date of Birth</h4>
+
+                <p><%= currUser.dateOfBirth ? currUser.dateOfBirth.toDateString() : "Not Provided" %></p>
+
+            </div>
+
+            <div class="detail-box">
+
+                <h4>Address</h4>
+
+                <p><%= currUser.address %></p>
+
+            </div>
+
+        </div>
+
+        <div class="profile-actions">
+
+            <a href="#" class="edit-profile-btn">
+
+                Edit Profile
+
+            </a>
+
+            <a href="/users/logout" class="logout-btn">
+
+                Logout
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
