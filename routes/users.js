@@ -21,7 +21,7 @@ router.post("/signup", async (req, res, next) => {
             confirmPassword
         } = req.body;
         if (password !== confirmPassword) {
-            return res.send("Passwords don't match.");
+            return res.send("passwords don't match");
         }
         const newUser = new User({ name, username, email, phone, gender, dateOfBirth, address, role: "customer"});
         const registeredUser =
@@ -53,6 +53,43 @@ router.post(
         res.redirect("/");
     }
 );
+
+// Profile
+router.get("/profile", (req, res) => {
+    res.render("users/profile");
+});
+
+// Edit Profile Form
+router.get("/profile/edit", (req, res) => {
+
+    res.render("users/edit", { currUser: req.user });
+
+});
+
+// Update Profile
+router.put("/profile", async (req, res) => {
+
+    const {
+        name,
+        email,
+        phone,
+        gender,
+        dateOfBirth,
+        address
+    } = req.body;
+
+    await User.findByIdAndUpdate(req.user._id, {
+        name,
+        email,
+        phone,
+        gender,
+        dateOfBirth,
+        address
+    });
+
+    res.redirect("/users/profile");
+
+});
 // Logout
 router.get("/logout", (req, res, next) => {
     req.logout(function (err) {
@@ -61,10 +98,6 @@ router.get("/logout", (req, res, next) => {
         }
         res.redirect("/");
     });
-});
-// Profile
-router.get("/profile", (req, res) => {
-    res.render("users/profile");
 });
 
 module.exports = router;

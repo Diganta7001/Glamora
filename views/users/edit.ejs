@@ -1,0 +1,95 @@
+<% layout("layouts/boilerplate") %>
+
+<section class="form-section">
+
+    <div class="form-container">
+
+        <h1>Edit Profile</h1>
+
+        <form action="/users/profile?_method=PUT" method="POST">
+
+            <label>Name</label>
+
+            <input
+                type="text"
+                name="name"
+                value="<%= currUser.name %>"
+                required
+            >
+
+            <label>Email</label>
+
+            <input
+                type="email"
+                name="email"
+                value="<%= currUser.email %>"
+                required
+            >
+
+            <label>Phone</label>
+
+            <input
+                type="text"
+                name="phone"
+                value="<%= currUser.phone %>"
+            >
+
+            <label>Gender</label>
+
+            <select name="gender">
+
+                <option value="">Select Gender</option>
+
+                <option value="Male"
+                    <%= currUser.gender==="Male"?"selected":"" %>>
+                    Male
+                </option>
+
+                <option value="Female"
+                    <%= currUser.gender==="Female"?"selected":"" %>>
+                    Female
+                </option>
+
+                <option value="Other"
+                    <%= currUser.gender==="Other"?"selected":"" %>>
+                    Other
+                </option>
+
+            </select>
+
+            <label>Date of Birth</label>
+
+            <input
+                type="date"
+                name="dateOfBirth"
+                value="<%= currUser.dateOfBirth ? currUser.dateOfBirth.toISOString().split('T')[0] : '' %>"
+            >
+
+            <label>Address</label>
+
+            <textarea
+                name="address"
+                rows="4"
+            ><%= currUser.address %></textarea>
+
+            <div class="edit-buttons">
+
+                <button type="submit" class="save-btn">
+
+                    Save Changes
+
+                </button>
+
+                <a href="/users/profile" class="cancel-btn">
+
+                    Cancel
+
+                </a>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</section>

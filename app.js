@@ -19,11 +19,10 @@ app.set("views", path.join(__dirname, "views"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
 app.use(methodOverride("_method"));
-// ====================
-// Database
-// ====================
+
+//database
 async function main() {
-    await mongoose.connect(        "mongodb://127.0.0.1:27017/glamora"
+    await mongoose.connect("mongodb://127.0.0.1:27017/glamora"
     );
 }
 
@@ -34,9 +33,7 @@ main()
 .catch((err) => {
     console.log(err);
 });
-// ====================
 // Session
-// ====================
 const sessionConfig = {
     secret: "glamoraSecret",
     resave: false,
@@ -48,24 +45,18 @@ const sessionConfig = {
     }
 };
 app.use(session(sessionConfig));
-// ====================
 // Passport
-// ====================
 app.use(passport.initialize());
 app.use(passport.session());
 passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
-// ====================
 // Global Variables
-// ====================
 app.use((req, res, next) => {
     res.locals.currUser = req.user;
     next();
 });
-// ====================
 // Landing Page
-// ====================
 app.get("/", async (req, res) => {
     const allServices = await Service.find({});
     res.render("home", { allServices });
@@ -74,9 +65,7 @@ app.get("/home", async (req, res) => {
     const allServices = await Service.find({});
     res.render("home", { allServices });
 });
-// ====================
 // Routes
-// ====================
 app.use("/services", serviceRoutes);
 app.use("/users", userRoutes);
 // ====================

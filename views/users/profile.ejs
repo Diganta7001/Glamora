@@ -1,105 +1,114 @@
 <% layout("layouts/boilerplate") %>
 
-<section class="profile-section">
-
-    <h1 class="profile-title">
-
-        My Profile
-
-    </h1>
+<section class="profile-page">
 
     <div class="profile-card">
 
-        <div class="profile-header">
+        <div class="profile-top">
 
             <img
                 src="<%= currUser.profileImage.url %>"
                 class="profile-avatar"
+                alt="Profile Picture"
             >
 
-            <div>
+            <h1><%= currUser.name %></h1>
 
-                <h2>
+            <h3>@<%= currUser.username %></h3>
 
-                    <%= currUser.name %>
+            <span class="role-badge">
 
-                </h2>
+                <%= currUser.role.toUpperCase() %>
 
-                <p>
+            </span>
 
-                    @<%= currUser.username %>
+        </div>
 
-                </p>
+        <div class="profile-info">
+
+            <h2>Personal Information</h2>
+
+            <div class="info-grid">
+
+                <div class="info-box">
+
+                    <h4>Email</h4>
+
+                    <p><%= currUser.email %></p>
+
+                </div>
+
+                <div class="info-box">
+
+                    <h4>Phone</h4>
+
+                    <p><%= currUser.phone %></p>
+
+                </div>
+
+                <div class="info-box">
+
+                    <h4>Gender</h4>
+
+                    <p><%= currUser.gender || "Not Provided" %></p>
+
+                </div>
+
+                <div class="info-box">
+
+                    <h4>Date of Birth</h4>
+
+                    <p>
+
+                        <%= currUser.dateOfBirth ? currUser.dateOfBirth.toDateString() : "Not Provided" %>
+
+                    </p>
+
+                </div>
+
+                <div class="info-box full-width">
+
+                    <h4>Address</h4>
+
+                    <p><%= currUser.address || "Not Provided" %></p>
+
+                </div>
 
             </div>
 
         </div>
 
-        <div class="profile-details">
+        <div class="quick-actions">
 
-            <div class="detail-box">
+            <h2>Quick Actions</h2>
 
-                <h4>Email</h4>
+            <div class="action-buttons">
 
-                <p><%= currUser.email %></p>
+                <a href="#" class="action-btn">
 
-            </div>
+                    📅 My Appointments
 
-            <div class="detail-box">
+                </a>
 
-                <h4>Phone</h4>
+                <a href="#" class="action-btn">
 
-                <p><%= currUser.phone %></p>
+                    ⭐ My Reviews
 
-            </div>
+                </a>
 
-            <div class="detail-box">
+                <a href="/users/profile/edit" class="action-btn">
 
-                <h4>Gender</h4>
+                    🛠 Edit Profile
 
-                <p><%= currUser.gender %></p>
+                </a>
 
-            </div>
+                <a style="color: white;" href="/users/logout" class="logout-btn">
 
-            <div class="detail-box">
+                    🚪 Logout
 
-                <h4>Role</h4>
-
-                <p><%= currUser.role %></p>
+                </a>
 
             </div>
-
-            <div class="detail-box">
-
-                <h4>Date of Birth</h4>
-
-                <p><%= currUser.dateOfBirth ? currUser.dateOfBirth.toDateString() : "Not Provided" %></p>
-
-            </div>
-
-            <div class="detail-box">
-
-                <h4>Address</h4>
-
-                <p><%= currUser.address %></p>
-
-            </div>
-
-        </div>
-
-        <div class="profile-actions">
-
-            <a href="#" class="edit-profile-btn">
-
-                Edit Profile
-
-            </a>
-
-            <a href="/users/logout" class="logout-btn">
-
-                Logout
-
-            </a>
 
         </div>
 
